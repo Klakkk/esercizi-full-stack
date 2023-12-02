@@ -1,0 +1,95 @@
+<!--Recuperare il valore di ciascun campo di input e creare un oggetto person contenente le proprietà: firstName, lastName e age.
+Infine recuperare l'elemento forme aggiungere l'attributo data-person contenente l'oggetto person in formato json.-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <body>
+      <div id="container">
+        <form>
+          <div>
+            <label>First Name:</label>
+            <input
+              type="text"
+              class="form-input"
+              id="firstName"
+              value="Mario"
+              placeholder="firstName"
+            />
+          </div>
+          <div>
+            <label>Last Name:</label>
+            <input
+              type="text"
+              class="form-input"
+              id="lastName"
+              value="Rossi"
+              placeholder="lastName"
+            />
+          </div>
+          <div>
+            <label>Age:</label>
+            <input
+              type="number"
+              class="form-input"
+              id="age"
+              value="25"
+              placeholder="age"
+            />
+          </div>
+        </form>
+      </div>
+
+      <script>
+        /*const data = document.querySelector('.form-input')
+        console.log(data)
+
+        const firstName = document.querySelector('#firstName').value
+        console.log(firstName)
+        const lastName = document.querySelector('#lastName').value
+        console.log(lastName)
+        const age = document.querySelector('#age').value
+        console.log(age)
+
+        const person = {
+          firstName: firstName,
+          lastName:lastName,
+          age:  age
+        }
+
+        console.log(person);
+
+        const myDiv = document.queryselector('#container')
+        const myForm = myDiv.children[0];
+        
+
+        myForm.setAttribute('data-person', JSON.stringify(person));*/
+
+
+        //questa parte è stata fatta in pair con Giuseppe
+       
+        const $allInput = document.querySelectorAll(".form-input");
+        const $form = document.querySelector("form");
+
+        const person ={
+          firstName: $allInput[0].value,
+          lastName: $allInput[1].value,
+          age: $allInput[2].value
+        }
+
+        const jsonObj = JSON.stringify(person);
+        $form.setAttribute("data-person", jsonObj);
+        
+
+      
+
+      </script>
+    </body>
+  </body>
+</html>
