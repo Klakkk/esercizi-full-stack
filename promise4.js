@@ -13,18 +13,19 @@ spero che funzioni*/
 
 function fetchDataFromAPI() {
   return new Promise((resolve, reject) => {
-    let success = Math.floor(Math.random() * 0.9);
-    if (success <= 0.5) {
-      resolve().then(() => {
-        console.log("Data retrieved successfully");
-      })
+    const success = Math.round(Math.random() * 5) / 10;
+    if (success < 0.5) {
+      return resolve("Data retrieved successfully");
+    } else {
+      return reject(" Error: Failed to fetch data");
     }
-    else {
-      reject().catch(() => {
-        console.log("Error: Failed to fetch data")
-      });
-    }
-  })
-};
+  });
+}
 
 fetchDataFromAPI()
+  .then((success) => {
+    console.log(success);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
