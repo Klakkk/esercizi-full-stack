@@ -3,10 +3,6 @@
 
 const colors = ["red", "green", "blue"];
 
-const firstColor =colors[0];
-const secondColor =colors[1];
-const ThirdColor =colors[2];
+const [firstColor, secondColor, ThirdColor] = colors;
 
-console.log(firstColor);
-console.log(secondColor);
-console.log(ThirdColor);
+console.log(firstColor, secondColor, ThirdColor);
