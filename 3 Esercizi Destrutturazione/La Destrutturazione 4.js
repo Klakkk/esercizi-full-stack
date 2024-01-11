@@ -3,8 +3,6 @@
 let a = 5;
 let b = 10;
 
-const firstNumber = b;
-const secondNumber = a;
+[a, b] = [b, a];
 
-console.log(firstNumber);
-console.log(secondNumber);
+console.log(a, b);
