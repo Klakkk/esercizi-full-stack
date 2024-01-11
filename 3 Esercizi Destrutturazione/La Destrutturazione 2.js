@@ -5,11 +5,11 @@
 
 const student = {
   info: { name: "Bob", age: 25 },
-  grades: { math: 95, science: 89 }
+  grades: { math: 95, science: 89 },
 };
-const info = student[0];
-const grades =student[1];
 
-  console.log(info);
-  console.log(grades);
+let { name: myName } = student.info;
+let { age: myAge } = student.info;
+let { math: myMath } = student.grades;
 
+console.log(myAge, myMath, myName);
