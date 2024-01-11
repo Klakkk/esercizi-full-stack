@@ -16,40 +16,39 @@
 // spero che funzioni 
 
 function fetchUserData() {
-  return new Promise((resolve, reject) =>{
-    setTimeout(()=>{
-      const id = {id: 1, name: "John"};
-      if(id.id == 1){
-        resolve(fetchUserPosts());
-        } else {
-          reject("error");
-        }
-    }, 1000)
-  }).then((fetchUserPosts) => { 
-    console.log(fetchUserData())
-  })
-  
-
-  
- function fetchUserPosts(userId, userName) {
-  const posts = "post1, post2, post3"
-    if(fetchUserData == true){
-    return id + posts
-    } else{
-      "error, id1 is not John"
+  return new Promise((resolve, reject) => {
+    const userData = { id: 1, name: "John" };
+    const data = true;
+    if (data) {
+      return resolve(`UserId: ${userData.id} \n UserName: ${userData.name}`);
+    } else {
+      return reject("Invalid Data");
     }
+  });
+}
 
-    
-  }
-};
-  
-fetchUserData().then((fetchUserPosts) => {
-  if(fetchUserPosts == true){
-    console.log(fetchUserPosts(), fetchUserData())
-  } else {
-    return "error"
-  }
-})
+function fetchUserPosts(userId, userName) {
+  return new Promise((resolve, reject) => {
+    const userPosts = ["Post 1", "Post 2", "Post 3"];
+    const data = true;
+    if (data) {
+      return resolve(
+        `Results found: ${userPosts.length} \n UserPosts: ${userPosts}`
+      );
+    } else {
+      return reject("ERROR");
+    }
+  });
+}
 
-// pre primo console log, non so come ho fatto a creare sto mostro, non so se funzioni,
-// ma in caso non funzionasse, lo consegnerò erratto, perche voglio effettivamente capire dove è l'errore
+fetchUserData()
+  .then((userData) => {
+    console.log("User Data:", userData);
+    return fetchUserPosts(userData.id, userData.name);
+  })
+  .then((userPosts) => {
+    console.log("User Posts:", userPosts);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
