@@ -3,6 +3,9 @@
 let a = 5;
 let b = 10;
 
-[a, b] = [b, a];
+const array = [a, b];
 
-console.log(a, b);
+[b, a] = array;
+
+console.log(b);
+console.log(a);
