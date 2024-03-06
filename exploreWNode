@@ -1,0 +1,5 @@
+const crypto = require('crypto');
+crypto.getCurves();
+
+const randomID = crypto.randomBytes(16).toString('hex');
+console.log(randomID);
